@@ -1,0 +1,255 @@
+:root {
+  --strongCyan: hsl(172, 67%, 45%);
+  --veryDarkCyan: hsl(183, 100%, 15%);
+  --darkGrayishCyan: hsl(186, 14%, 43%);
+  --grayishCyan: hsl(184, 14%, 56%);
+  --hoverCyan: hsl(173, 61%, 77%);
+  --lightGrayishCyan: hsl(185, 41%, 84%);
+  --veryLightGrayishCyan: hsl(189, 41%, 97%);
+  --white: hsl(0, 0%, 100%);
+  --redError: hsl(3, 99%, 65%);
+}
+* {
+  font-family: "SpaceMonoRegular", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+}
+body {
+  background-color: var(--lightGrayishCyan);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0px;
+}
+
+section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+svg {
+  margin-bottom: 10px;
+  position: relative;
+  transform: translateY(-77px);
+}
+
+main {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  background-color: var(--white);
+  border-radius: 25px;
+  height: 480px;
+  width: 920px;
+  box-shadow: 0px 20px 20px 10px hsla(186, 14%, 43%, 0.158);
+}
+
+@media (max-width: 920px) {
+  main {
+    height: auto;
+    width: auto;
+    margin-inline: 20px;
+  }
+}
+@media (max-width: 720px) {
+  main {
+    grid-template-columns: 1fr;
+  }
+  svg {
+    margin: 50px;
+    transform: translateY(0px);
+  }
+}
+
+@media (min-width: 414px) {
+  body {
+    height: 100vh;
+    width: 100vw;
+  }
+}
+
+h1,
+h2,
+h3 {
+  font-size: 16px;
+  margin: 0%;
+  margin-bottom: 5px;
+}
+h3 {
+  margin-bottom: 0%;
+}
+
+h1,
+h2 {
+  color: var(--darkGrayishCyan);
+}
+
+#percent-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  height: max-content;
+  width: 100%;
+  gap: 15px;
+  justify-content: center;
+}
+
+.input + h2 {
+  margin-bottom: 16px;
+}
+
+button {
+  background-color: var(--veryDarkCyan);
+  color: var(--white);
+  border-radius: 5px;
+  border-width: 0px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+button:hover {
+  opacity: 0.9;
+  scale: 1.05;
+  background-color: var(--hoverCyan) !important;
+  color: var(--veryDarkCyan) !important;
+}
+
+button,
+#custom {
+  height: 48px;
+}
+
+button,
+input {
+  font-size: 24px;
+}
+
+.panel {
+  display: flex;
+  flex-direction: column;
+}
+input {
+  width: calc(100% - 4px);
+  border: 2px solid transparent;
+}
+input:focus {
+  outline: none !important;
+  border: 2px solid var(--strongCyan) !important;
+}
+
+.out-field {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+p {
+  font-size: 13px;
+  color: var(--grayishCyan);
+  margin: 0%;
+}
+h4 {
+  color: var(--strongCyan);
+  font-size: 2.9rem;
+  height: 100%;
+  margin: 0%;
+}
+
+input,
+button,
+h4 {
+  font-family: "SpaceMonoBold";
+}
+
+#btn-reset {
+  background-color: var(--strongCyan);
+  color: var(--veryDarkCyan);
+  margin-top: auto;
+  font-size: 20px;
+  padding-block: 0px;
+}
+#output-panel {
+  color: var(--veryLightGrayishCyan);
+  border-radius: 15px;
+  background-color: var(--veryDarkCyan);
+  padding: 40px;
+  margin: 32px;
+  margin-left: 15px;
+}
+
+.input input {
+  width: calc(100% - 14px);
+  text-align: right;
+  background-color: var(--veryLightGrayishCyan);
+  border-radius: 10px;
+  padding: 5px 0%;
+  color: var(--veryDarkCyan);
+  background-repeat: no-repeat;
+  background-size: calc(contain);
+  background-position-y: center;
+  background-position-x: 15px;
+  padding-right: 15px;
+}
+
+.input:first-child input {
+  background-image: url(../assets/images/icon-dollar.svg);
+}
+
+.input:last-child input {
+  background-image: url(../assets/images/icon-person.svg);
+}
+
+input {
+  appearance: textfield;
+}
+
+.input:first-child {
+  margin-bottom: auto;
+}
+.input:last-child {
+  margin-top: auto;
+}
+
+#custom {
+  border-radius: 5px;
+  margin: 0%;
+  padding: 0%;
+  text-align: center;
+}
+#input-panel {
+  margin: 48px;
+  margin-right: 35px;
+}
+
+#nopText {
+  display: flex;
+  justify-content: space-between;
+}
+#error {
+  color: var(--redError);
+  display: none;
+}
+
+@font-face {
+  font-family: "SpaceMonoRegular";
+  src: url(../assets/fonts/SpaceMono-Regular.ttf);
+}
+
+@font-face {
+  font-family: "SpaceMonoBold";
+  src: url(../assets/fonts/SpaceMono-Bold.ttf);
+}
+
+@media (max-width: 414px) {
+  main {
+    margin-inline: 0px;
+    border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 0px;
+  }
+  #percent-container {
+    grid-template-columns: 1fr 1fr;
+  }
+  #output-panel,
+  #input-panel {
+    margin: 30px;
+  }
+}
